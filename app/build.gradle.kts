@@ -1,3 +1,5 @@
+import org.codehaus.groovy.runtime.ArrayTypeUtils.dimension
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -19,19 +21,17 @@ android {
     }
 
     buildTypes {
-        debug {
-            buildConfigField("String", "BASE_URL", "https://debug.env.com/")
-        }
-
         release {
             isMinifyEnabled = false
+
+            buildConfigField("String", "BASE_URL", "https://prod.env.com/")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "https://prod.env.com/")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -41,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
