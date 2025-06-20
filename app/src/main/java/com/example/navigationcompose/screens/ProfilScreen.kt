@@ -12,9 +12,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.viemodels.ConversationViewModel
 
 @Composable
-fun ProfilScreen(modifier: Modifier = Modifier) {
+fun ProfilScreen(modifier: Modifier = Modifier, convVm: ConversationViewModel = viewModel()) {
+
+    convVm.editMessage()
     Box(
         modifier = modifier
             .fillMaxSize()
