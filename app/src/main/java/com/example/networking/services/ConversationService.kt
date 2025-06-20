@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface ConversationService {
 
     @GET("RamzyK/demo/conversations")
-    fun getAllConversations(): Call<List<ConversationDto>>
+    fun getAllConversations(): Call<ConversationDto>
 }

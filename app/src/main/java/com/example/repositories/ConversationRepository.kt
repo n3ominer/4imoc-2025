@@ -5,6 +5,7 @@ import com.example.data.dto.ConversationDto
 import com.example.data.models.messages.ConversationModel
 import com.example.networking.RetrofitHttpClient
 import com.example.networking.services.ConversationService
+import com.example.utils.toModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,14 +19,14 @@ class ConversationRepository {
     fun fetchAllConversations() {
         val call = conversationService.getAllConversations()
 
-        call.enqueue(object: Callback<List<ConversationDto>> {
+        call.enqueue(object: Callback<ConversationDto> {
             override fun onResponse(
-                call: Call<List<ConversationDto>?>,
-                response: Response<List<ConversationDto>?>
+                call: Call<ConversationDto?>,
+                response: Response<ConversationDto?>
             ) {
                 if (response.isSuccessful) {
                     response.body()?.let { conversations ->
-                        conver
+                        val conversations = conversations.toModel()
                     }
                 } else {
 
@@ -33,7 +34,7 @@ class ConversationRepository {
             }
 
             override fun onFailure(
-                call: Call<List<ConversationDto>?>,
+                call: Call<ConversationDto?>,
                 t: Throwable
             ) {
                 Log.d("fetchAllConversations - error", "Could not fetch all conversation from API")
