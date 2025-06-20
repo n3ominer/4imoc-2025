@@ -9,8 +9,8 @@ object RetrofitHttpClient {
 
     val instance: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL) // Configured HTTp client's base url
+            .addConverterFactory(GsonConverterFactory.create()) // Added a converter for JSON --> DataClass
             .build()
     }
 }
