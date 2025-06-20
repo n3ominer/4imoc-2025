@@ -23,7 +23,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.navigationcompose.destinations.BasicAppDestination
-import com.example.navigationcompose.destinations.ScreenOne
+import com.example.navigationcompose.destinations.HomeScreen
 import com.example.navigationcompose.destinations.navTabs
 
 private var TabHeight = 56.dp
@@ -97,7 +97,7 @@ fun BasicNavTopBarPreview() {
     BasicNavBar(
         destinations = navTabs,
         onTabSelected = { tab -> },
-        currentDestination = ScreenOne
+        currentDestination = HomeScreen
     )
 }
 

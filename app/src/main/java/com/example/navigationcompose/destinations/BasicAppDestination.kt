@@ -1,10 +1,10 @@
 package com.example.navigationcompose.destinations
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 
 // DESTINATIONS
@@ -16,28 +16,28 @@ interface BasicAppDestination {
 }
 
 
-object ScreenOne: BasicAppDestination {
+object HomeScreen: BasicAppDestination {
     override val icon = Icons.Default.Home
-    override val name: String = "Screen1"
+    override val name: String = "Accueil"
     override val route: String = "screens/1"
 }
 
-object ScreenTwo: BasicAppDestination {
-    override val icon = Icons.Default.Build
-    override val name: String = "Screen2"
+object ResearchScreen: BasicAppDestination {
+    override val icon = Icons.Default.Search
+    override val name: String = "Recherche"
     override val route: String = "screens/2"
 }
 
-object ScreenThree: BasicAppDestination {
-    override val icon = Icons.Default.Person
-    override val name: String = "Screen3"
+object MessagesScreen: BasicAppDestination {
+    override val icon = Icons.Default.Email
+    override val name: String = "Messagerie"
     override val route: String = "screens/3"
 }
 
-object ScreenFour: BasicAppDestination {
+object ProfileScreen: BasicAppDestination {
     override val icon = Icons.Default.Face
-    override val name: String = "Screen4"
+    override val name: String = "Profil"
     override val route: String = "screens/4"
 }
 
-val navTabs = listOf(ScreenOne, ScreenTwo, ScreenThree, ScreenFour)
+val navTabs = listOf(HomeScreen, ResearchScreen, MessagesScreen, ProfileScreen)

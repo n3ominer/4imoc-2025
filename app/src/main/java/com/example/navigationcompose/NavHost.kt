@@ -6,14 +6,14 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.navigationcompose.destinations.ScreenFour
-import com.example.navigationcompose.destinations.ScreenOne
-import com.example.navigationcompose.destinations.ScreenThree
-import com.example.navigationcompose.destinations.ScreenTwo
-import com.example.navigationcompose.screens.Screen1
-import com.example.navigationcompose.screens.Screen2
-import com.example.navigationcompose.screens.Screen3
-import com.example.navigationcompose.screens.Screen4
+import com.example.navigationcompose.destinations.ProfileScreen
+import com.example.navigationcompose.destinations.HomeScreen
+import com.example.navigationcompose.destinations.MessagesScreen
+import com.example.navigationcompose.destinations.ResearchScreen
+import com.example.navigationcompose.screens.HomeScreen
+import com.example.navigationcompose.screens.ResearchScreen
+import com.example.navigationcompose.screens.MessagesScreen
+import com.example.navigationcompose.screens.ProfilScreen
 
 
 // NAVHOST + NAVBAR
@@ -27,25 +27,25 @@ fun AppNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = ScreenOne.route,
+        startDestination = HomeScreen.route,
         modifier = modifier
     ) {
-        composable(route = ScreenOne.route) {
-            Screen1(onActionMoveToScreen3 = {
+        composable(route = HomeScreen.route) {
+            HomeScreen(onActionMoveToScreen3 = {
                 moveToScreen3Action()
             })
         }
 
-        composable(route = ScreenTwo.route) {
-            Screen2()
+        composable(route = ResearchScreen.route) {
+            ResearchScreen()
         }
 
-        composable(route = ScreenThree.route) {
-            Screen3()
+        composable(route = MessagesScreen.route) {
+            MessagesScreen()
         }
 
-        composable(route = ScreenFour.route) {
-            Screen4()
+        composable(route = ProfileScreen.route) {
+            ProfilScreen()
         }
     }
 }

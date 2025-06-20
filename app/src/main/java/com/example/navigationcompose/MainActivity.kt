@@ -14,8 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.navigationcompose.composables.BasicNavBar
-import com.example.navigationcompose.destinations.ScreenOne
-import com.example.navigationcompose.destinations.ScreenThree
+import com.example.navigationcompose.destinations.HomeScreen
+import com.example.navigationcompose.destinations.MessagesScreen
 import com.example.navigationcompose.destinations.navTabs
 import com.example.navigationcompose.ui.theme.NavigationComposeTheme
 
@@ -36,7 +36,7 @@ fun SimpleNavApp() {
     val currentBackStack by navController.currentBackStackEntryAsState()
     val currentDestination = currentBackStack?.destination
 
-    val currentScreen = navTabs.find { it.route == currentDestination?.route } ?: ScreenOne
+    val currentScreen = navTabs.find { it.route == currentDestination?.route } ?: HomeScreen
 
     NavigationComposeTheme {
         Scaffold(
@@ -56,7 +56,7 @@ fun SimpleNavApp() {
                 navController = navController,
                 modifier = Modifier.padding(innerPadding),
                 moveToScreen3Action = {
-                    navController.navigateSingleToTop(ScreenThree.route)
+                    navController.navigateSingleToTop(MessagesScreen.route)
                 }
             )
         }

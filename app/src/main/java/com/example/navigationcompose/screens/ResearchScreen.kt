@@ -13,17 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 
-
 @Composable
-fun Screen3(modifier: Modifier = Modifier) {
+fun ResearchScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color.Magenta),
+            .background(Color.Blue),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            "Screen 3",
+            "Screen 2",
             style = MaterialTheme
                 .typography
                 .headlineLarge,
@@ -35,8 +34,8 @@ fun Screen3(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun Screen3Preview() {
+fun Screen2Preview() {
     Scaffold { innerPadding ->
-        Screen3(modifier = Modifier.padding(innerPadding))
+        ResearchScreen(modifier = Modifier.padding(innerPadding))
     }
 }

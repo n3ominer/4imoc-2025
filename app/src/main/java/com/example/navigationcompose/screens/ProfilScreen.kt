@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun Screen4(modifier: Modifier = Modifier) {
+fun ProfilScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -36,7 +36,7 @@ fun Screen4(modifier: Modifier = Modifier) {
 @Composable
 fun Screen4Preview() {
     Scaffold { innerPadding ->
-        Screen4(modifier = Modifier.padding(innerPadding))
+        ProfilScreen(modifier = Modifier.padding(innerPadding))
     }
 }
 

@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 
 @Composable
-fun Screen1(
+fun HomeScreen(
     modifier: Modifier = Modifier,
     onActionMoveToScreen3: () -> Unit
 ) {
@@ -42,6 +42,6 @@ fun Screen1(
 @Composable
 fun Screen1Preview() {
     Scaffold { innerPadding ->
-        Screen1(modifier = Modifier.padding(innerPadding), onActionMoveToScreen3 = {})
+        HomeScreen(modifier = Modifier.padding(innerPadding), onActionMoveToScreen3 = {})
     }
 }
